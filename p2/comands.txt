@@ -1,0 +1,6 @@
+INSERT INTO authors (author_name)
+VALUES ('Dan Brown'),('Frederick Forsyth'),('Tana French'),('Charlotte Brontë'),('Beverly Jenkins')
+
+
+INSERT INTO genres (genre_name)
+VALUES ('Horror'),('Comedy'),('Love'),('Mystery')
