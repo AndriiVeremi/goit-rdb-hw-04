@@ -1,0 +1,8 @@
+SELECT COUNT(*) AS row_count FROM order_details;
+
+
+
+
+SELECT *
+FROM employees
+WHERE employee_id > 3 AND employee_id <= 10
