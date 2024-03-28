@@ -1,6 +1,25 @@
 INSERT INTO authors (author_name)
 VALUES ('Dan Brown'),('Frederick Forsyth'),('Tana French'),('Charlotte Brontë'),('Beverly Jenkins')
 
-
 INSERT INTO genres (genre_name)
 VALUES ('Horror'),('Comedy'),('Love'),('Mystery')
+
+INSERT INTO books (title, publication_year, author_id, genre_id) VALUES 
+('Da Vinci Code', 2006, 1, 4), 
+('The Day of the Jackal', 2008, 2, 3),
+('In the Woods', 2011, 3, 2),
+('Jane Eyre', 2008, 4, 4),
+('Indigo', 1995, 5, 1);
+
+INSERT INTO users (user_name, email) VALUES 
+('Aandrii Veremii', 'asd@dsa.ua'), 
+('Sergii Bass', 'mail@co.com'),
+('Viginia Soltes', 'victor@mail.com'),
+('Major Chornobajev', 'Chornobajev@zsu.ua');
+
+INSERT INTO borrowed_books (borrow_date, return_date, book_id, user_id) VALUES 
+('2002-06-11', '2002-08-06', 1, 1), 
+('2004-09-15', '2004-11-11', 5, 4),
+('2011-11-05', '2012-02-25', 2, 1),
+('2022-02-22', '2022-05-21', 3, 3),
+('2022-03-05', '2022-04-16', 4, 2);

@@ -1,8 +1,25 @@
-SELECT COUNT(*) AS row_count FROM order_details;
+
+SELECT categories.name, COUNT(*) AS total_rows, AVG(order_details.quantity) AS average_quantity
+FROM order_details
+INNER JOIN orders ON order_details.order_id = orders.id
+INNER JOIN customers ON orders.customer_id = customers.id
+INNER JOIN products ON order_details.product_id = products.id
+INNER JOIN categories ON products.category_id = categories.id
+INNER JOIN employees ON orders.employee_id = employees.employee_id
+INNER JOIN shippers ON orders.shipper_id = shippers.id
+INNER JOIN suppliers ON products.supplier_id = suppliers.id
+WHERE employees.employee_id > 3 AND employees.employee_id <= 10
+GROUP BY categories.name
+HAVING AVG(order_details.quantity) > 21
+ORDER BY total_rows DESC
+LIMIT 4 OFFSET 1;
+
+//==================================================================
+
+Змініть декілька операторів INNER на LEFT чи RIGHT. 
+Визначте, що відбувається з кількістю рядків. 
+Чому? Напишіть відповідь у текстовому файлі.
 
 
-
-
-SELECT *
-FROM employees
-WHERE employee_id > 3 AND employee_id <= 10
+При зміні INNER на LEFT чи RIGHT буде змінюватись кількість рядків (що видно на 1.jpg)
+Чому? Тому що коли вказано LEFT то беруться всі дані з лівої таблиці і дані з правої які задовільняють умову або навпаки якщо RIGHT
